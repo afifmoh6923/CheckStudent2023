@@ -15,4 +15,8 @@ public class Teacher extends Person {
         return newSubject;
     }
 
+    public String toString() {
+        return this.getName() + ", " + subject;
+    }
+
 }

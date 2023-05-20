@@ -12,9 +12,20 @@ public class Student extends Person {
 
     @Override
     public boolean equals(Object other) {
+        if (this.hashCode() == other.hashCode()) {
+            return true;
+        }
         if (!(other instanceof Student)) {
             return false;
         }
         return ((Student) other).getName() == this.getName() && ((Student) other).getID() == this.getID();
+    }
+    @Override
+    public int hashCode() {
+        return this.getName().hashCode() + ID;
+    }
+
+    public String toString() {
+        return this.getName() + " " + ID;
     }
 }
